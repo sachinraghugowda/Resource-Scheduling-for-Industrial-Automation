@@ -18,7 +18,7 @@
  * Author: Marco Miozzo <marco.miozzo@cttc.es>
  *         Nicola Baldo <nbaldo@cttc.es>
  *
- * HYBRID RR scheduler modified by Zubair Amjad <zubair.amjad@hs-offenburg.de>
+ * HYBRID RR scheduler modified by Sachin Gowda
  */
 
 
