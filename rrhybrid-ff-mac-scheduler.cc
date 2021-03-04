@@ -17,7 +17,7 @@
  *
  * Author: Marco Miozzo <marco.miozzo@cttc.es>
  *
- * Round Robin ff mac scheduler Modified by Zubair Amjad <zubair.amjad@hs-offenburg.de>\
+ * Round Robin ff mac scheduler Modified by Sachin Gowda \
  * \to implement HYBRID
  */
 
@@ -1303,7 +1303,7 @@ RrHybridFfMacScheduler::DoSchedDlCqiInfoReq (const struct FfMacSchedSapProvider:
   return;
 }
 
-//Zubair: Here is the sweet spot for UL scheduling
+//Sachin: Here is the sweet spot for UL scheduling
 void
 RrHybridFfMacScheduler::DoSchedUlTriggerReq(const struct FfMacSchedSapProvider::SchedUlTriggerReqParameters& params)
 {
@@ -1415,7 +1415,7 @@ RrHybridFfMacScheduler::DoSchedUlTriggerReq(const struct FfMacSchedSapProvider::
       // select UEs with queues not empty and not yet allocated for HARQ
       NS_LOG_INFO (this << " UE " << (*it).first << " queue " << (*it).second);
 
-      //Zubair: if the UE does not have any queue, increase flow anyway
+      //Sachin: if the UE does not have any queue, increase flow anyway
      // if (((*it).second > 0)&&(itRnti == rntiAllocated.end ()))
         if (counter <= m_nSpsUe)
         {
@@ -1439,7 +1439,7 @@ RrHybridFfMacScheduler::DoSchedUlTriggerReq(const struct FfMacSchedSapProvider::
     }
 
 
-//Zubair: this 'if' is used in case no flow to schedule. [Not used anymore]
+//Sachin: this 'if' is used in case no flow to schedule. [Not used anymore]
   if (nflows == 0)
     {
       if (ret.m_dciList.size () > 0)
@@ -1485,7 +1485,7 @@ RrHybridFfMacScheduler::DoSchedUlTriggerReq(const struct FfMacSchedSapProvider::
     {
      std::set <uint16_t>::iterator itRnti = rntiAllocated.find ((*it).first);
        // int num = 1;
-      //Zubair: it.second is the number of queues in the UE. Allocation should be done even if there is no queue. done
+      //Sachin: it.second is the number of queues in the UE. Allocation should be done even if there is no queue. done
         // IF this UE belongs to SPS  
          //  for (int num=1; num <= m_nSpsUe; num++)
        
@@ -1732,7 +1732,7 @@ RrHybridFfMacScheduler::DoSchedUlTriggerReq(const struct FfMacSchedSapProvider::
           break;
         }
     }
-  //Zubair: this condition only allows the loop to run in case there is data in UL with UE
+  //Sachin: this condition only allows the loop to run in case there is data in UL with UE
   while (((*it).first != m_nextRntiUl)&&(rbPerFlow!=0));
 
   m_allocationMaps.insert (std::pair <uint16_t, std::vector <uint16_t> > (params.m_sfnSf, rbgAllocationMap));
