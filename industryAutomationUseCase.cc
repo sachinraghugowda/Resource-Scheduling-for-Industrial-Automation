@@ -18,7 +18,7 @@
  * Author: Jaume Nin <jnin@cttc.es>
  *
  * Original File: lena-profiling.cc
- * Modified by: Zubair Amjad <zubair.amjad@hs-offenburg.de>
+ * Modified by: Sachin Gowda
  * Investigation into sTTI and SPS for industry automation use case
  */
 
